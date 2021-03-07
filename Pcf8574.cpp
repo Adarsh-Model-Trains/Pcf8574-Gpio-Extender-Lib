@@ -95,8 +95,8 @@ void Pcf8574::boardRefresh(int sum) {
   }
 
   // Send the LSB 8 bits of LED_Pattern out to device 1
-  // Wire.beginTransmission(_boardsAddress);
-  // Wire.write(sum);
-  // Wire.endTransmission();
+   Wire.beginTransmission(_boardsAddress);
+   Wire.write(sum);
+   Wire.endTransmission();
   sum = 0;
 }
