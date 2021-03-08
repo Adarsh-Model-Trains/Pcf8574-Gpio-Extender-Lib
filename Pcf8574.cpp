@@ -98,5 +98,4 @@ void Pcf8574::boardRefresh(int sum) {
    Wire.beginTransmission(_boardsAddress);
    Wire.write(sum);
    Wire.endTransmission();
-  sum = 0;
 }

@@ -7,6 +7,7 @@
 #define Pcf8574Board_h
 
 #include "Pcf8574.h"
+#include <Wire.h>
 
 class Pcf8574Board {
 
@@ -30,6 +31,7 @@ class Pcf8574Board {
 
     Pcf8574Board(int totalPcf8574Boards) : _totalPcf8574Boards(totalPcf8574Boards) {
       initPcf8574Boards();
+      Wire.begin();
     }
 
     bool switchOn(int pinNo);

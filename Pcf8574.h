@@ -6,6 +6,9 @@
 #ifndef Pcf8574_h
 #define Pcf8574_h
 
+#include <Wire.h>
+
+
 class Pcf8574 {
 
   private:
