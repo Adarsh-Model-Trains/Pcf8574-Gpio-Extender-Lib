@@ -18,6 +18,10 @@ pin number will start from 1 to (number of board X 8 pin per board)
 NOTE: pcf8574 work on different logic so when pin is low by current then its on and when pin is high then its off 
 but that is taken care by on off api already 
 
+NOTE: without Pcf8574 board connected on arduino it will no work 
+we have connbect the sda and scl with +5v vcc and gnd pin from arduino to Pcf8574 board 
+then connect the device on pin po to p7 for controlling them and use the vcc of the last board for powering up the device 
+
 ``` 
 
 ## addressing 
