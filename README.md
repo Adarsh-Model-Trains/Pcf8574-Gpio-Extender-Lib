@@ -13,6 +13,9 @@ respected to their sequence in the chain
 
 pin number will start from 1 to (number of board X 8 pin per board)
 
+NOTE: pcf8574 work on different logic so when pin is low by current then its on and when pin is high then its off 
+but that is taken care by on off api already 
+
 ``` 
 
 ## addressing 
@@ -57,6 +60,7 @@ void setup() {
 
 ### for debug messages a initialize Serial in setup 
 
+
 ```
 void setup() {
   
@@ -69,6 +73,7 @@ void setup() {
 ```
 
 ### use lib method for pin on 
+* NOTE WE ARE USING POINTER SO WE HAVE TO USE -> MARK FOR CALLING METHODS 
 ```
 void loop() {
   
@@ -82,6 +87,9 @@ void loop() {
 ```
 
 ### use lib method for pin off
+
+* NOTE WE ARE USING POINTER SO WE HAVE TO USE -> MARK FOR CALLING METHODS 
+
 ```
 void loop() {
   
