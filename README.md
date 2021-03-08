@@ -2,6 +2,8 @@
 
 ---
 
+# <a href="https://github.com/adarshkumarsingh83/Pcf8574-lib/archive/main.zip">download</a>
+
 ## About the Lib
 ```
 Pcf8574-lib is for supporing multiple Pcf8574 boards together 
