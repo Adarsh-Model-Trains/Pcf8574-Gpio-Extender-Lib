@@ -20,13 +20,20 @@ but that is taken care by on off api already
 
 NOTE: without Pcf8574 board connected on arduino it will no work 
 
+``` 
+
+## connections details 
+
+![img](/image/connections.JPG)
+```
 Connect Details 
 we have connect the sda and scl from arduino to Pcf8574 board 
 +5v vcc and gnd pin from arduino to Pcf8574 board 
 then connect the device on pin po to p7 for controlling them 
 use the vcc of the last board for powering up the device 
 
-``` 
+```
+
 
 ## addressing 
 ![img](/image/PCF8574-ADDRESS-CONFIG.png)
@@ -44,9 +51,9 @@ and we can set 8 boareds with 0x21 to 0x27 addressing with 8pin in each board
 ```
 
 
-### define the pointer for the Pcf8574Board
+### define the object for the Pcf8574Board
 ```
-Pcf8574Board *pcf8574Board;
+Pcf8574Board pcf8574Board;
 ```
 
 ### define the number of the board we are using in chain 
@@ -54,13 +61,13 @@ Pcf8574Board *pcf8574Board;
 #define NO_OF_BOARDS 8
 ```
 
-### initialize the pointer with obuject in setup method 
+### initialize the object with obuject in setup method 
 ```
 void setup() {
   
    .....
 
-    pcf8574Board = &Pcf8574Board(NO_OF_BOARDS);
+    pcf8574Board.setTotalPcf8574Boards(NO_OF_BOARDS);
   
   .......
 
@@ -68,14 +75,20 @@ void setup() {
 
 ```
 
+### initialize the Pcf8574Boards object for using its methods 
+
+```
+    .......
+      pcf8574Board.initPcf8574Boards();
+     ........
+```
+
+
 ### for debug messages a initialize Serial in setup 
-
-
 ```
 void setup() {
   
   Serial.begin(xxxx); // xxx can be any valid supported number 
-  pcf8574Board = &Pcf8574Board(NO_OF_BOARDS);
 
   .........
 }
@@ -83,13 +96,12 @@ void setup() {
 ```
 
 ### use lib method for pin on 
-* NOTE WE ARE USING POINTER SO WE HAVE TO USE -> MARK FOR CALLING METHODS 
 ```
 void loop() {
   
   .......
 
-  pcf8574Board-> switchOn(pinNo); // pinNo is the sequence value of the pin in Pcf8574 chain starting from 0 to (8 x number of board) in chain 
+  pcf8574Board.switchOn(pinNo); // pinNo is the sequence value of the pin in Pcf8574 chain starting from 0 to (8 x number of board) in chain 
   
   ..........
 }
@@ -98,14 +110,12 @@ void loop() {
 
 ### use lib method for pin off
 
-* NOTE WE ARE USING POINTER SO WE HAVE TO USE -> MARK FOR CALLING METHODS 
-
 ```
 void loop() {
   
   .......
 
-  pcf8574Board-> switchOn(pinNo); // pinNo is the sequence value of the pin in Pcf8574 chain starting from 0 to (8 x number of board) in chain 
+  pcf8574Board.switchOn(pinNo); // pinNo is the sequence value of the pin in Pcf8574 chain starting from 0 to (8 x number of board) in chain 
   
   ..........
 }
@@ -117,13 +127,15 @@ void loop() {
 #include "Pcf8574.h"
 #include "Pcf8574Board.h"
 
-Pcf8574Board *pcf8574Board;
-
 #define NO_OF_BOARDS 5
+
+Pcf8574Board pcf8574Board;
 int MAX_PINS = 0;
+
 void setup() {
   Serial.begin(9600);
-  pcf8574Board = &Pcf8574Board(NO_OF_BOARDS);
+  pcf8574Board.setTotalPcf8574Boards(NO_OF_BOARDS);
+  pcf8574Board.initPcf8574Boards();
   MAX_PINS = NO_OF_BOARDS * 8;
 }
 
@@ -134,11 +146,11 @@ void loop() {
   Serial.print("PIN NO ");
   Serial.println(pinNo);
   delay(1000);
-  pcf8574Board-> switchOn(pinNo);
-  pcf8574Board->displayPinState();
+  pcf8574Board.switchOn(pinNo);
+  pcf8574Board.displayPinState();
   delay(1000);
-  pcf8574Board->switchOff(pinNo);
-  pcf8574Board->displayPinState();
+  pcf8574Board.switchOff(pinNo);
+  pcf8574Board.displayPinState();
   delay(1000);
 }
 
