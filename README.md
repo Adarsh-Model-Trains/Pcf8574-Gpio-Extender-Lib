@@ -61,7 +61,7 @@ Pcf8574Board pcf8574Board;
 #define NO_OF_BOARDS 8
 ```
 
-### initialize the object with obuject in setup method 
+### initialize the object with in setup method 
 ```
 void setup() {
   
