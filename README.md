@@ -44,7 +44,7 @@ and we can set 8 boareds with 0x21 to 0x27 addressing with 8pin in each board
 
 ## steps for using lib
 
-### include the headfile 
+### include the header file 
 ```
 #include "Pcf8574.h"
 #include "Pcf8574Board.h"
