@@ -23,17 +23,17 @@ class Pcf8574Board {
     int _totalPcf8574Boards;
     Pcf8574  * _pcf8574Boards;
 
-    void initPcf8574Boards();
+
     Pcf8574Board::BoardPinData findBoardPin(int no);
     Pcf8574 getPcf8574Object(int i);
 
   public:
-
-    Pcf8574Board(int totalPcf8574Boards) : _totalPcf8574Boards(totalPcf8574Boards) {
-      initPcf8574Boards();
+    Pcf8574Board() {
       Wire.begin();
     }
 
+    void setTotalPcf8574Boards(int totalPcf8574Boards);
+    void initPcf8574Boards();
     bool switchOn(int pinNo);
     bool switchOff(int pinNo);
     void restBoard(int boardNo);
@@ -48,4 +48,5 @@ class Pcf8574Board {
     }
 };
 
+extern Pcf8574Board;
 #endif

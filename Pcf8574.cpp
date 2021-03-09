@@ -18,6 +18,8 @@ void Pcf8574::initPcf8574() {
 
 void Pcf8574::setBoardAddress(int boardsAddress) {
   this->_boardsAddress = boardsAddress;
+  Serial.print("board address set ");
+  Serial.println(_boardsAddress);
 }
 
 int Pcf8574::getBoardAddress() {
@@ -25,13 +27,13 @@ int Pcf8574::getBoardAddress() {
 }
 
 bool Pcf8574::switchPinOn(int pinNo) {
-  _boardPinsState[pinNo] = _ON;
+  _boardPinsState[pinNo] = _OFF;
   boardRefresh(0);
   return true;
 }
 
 bool Pcf8574::switchPinOff(int pinNo) {
-  _boardPinsState[pinNo] = _OFF;
+  _boardPinsState[pinNo] = _ON;
   boardRefresh(0);
   return true;
 }
@@ -95,7 +97,7 @@ void Pcf8574::boardRefresh(int sum) {
   }
 
   // Send the LSB 8 bits of LED_Pattern out to device 1
-   Wire.beginTransmission(_boardsAddress);
-   Wire.write(sum);
-   Wire.endTransmission();
+  Wire.beginTransmission(_boardsAddress);
+  Wire.write(sum);
+  Wire.endTransmission();
 }

@@ -5,22 +5,27 @@
 */
 #include "Pcf8574Board.h"
 #include <Arduino.h>
-#include <Wire.h>
 
+
+void Pcf8574Board::setTotalPcf8574Boards(int totalPcf8574Boards) {
+  this->_totalPcf8574Boards = totalPcf8574Boards;
+}
 
 void Pcf8574Board::initPcf8574Boards() {
   _pcf8574Boards = new Pcf8574[_totalPcf8574Boards];
   for (int i = 0; i < _totalPcf8574Boards; i++) {
     _pcf8574Boards[i].setBoardAddress(_boardAddress[i]);
+    _pcf8574Boards[i].initPcf8574();
   }
 }
 
 Pcf8574Board::BoardPinData Pcf8574Board::findBoardPin(int pinNo) {
   Pcf8574Board::BoardPinData boardPinData;
-  int board = (pinNo / 8);
+  pinNo = pinNo - 1;
+  int board = (pinNo / 8) ;
   if (board <= _totalPcf8574Boards && pinNo <= (_totalPcf8574Boards * 8)) {
     int totalPins = (board * 8);
-    int pin = (pinNo - totalPins) - 1;
+    int pin = (pinNo - totalPins);
     pin = (pin == -1) ? 0 : pin;
     boardPinData.processed = true;
     boardPinData.boardNo = board;
