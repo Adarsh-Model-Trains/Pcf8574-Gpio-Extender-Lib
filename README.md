@@ -18,7 +18,7 @@ pin number will start from 1 to (number of board X 8 pin per board)
 NOTE: pcf8574 work on different logic so when pin is low by current then its on and when pin is high then its off 
 but that is taken care by on off api already 
 
-NOTE: without Pcf8574 board connected on arduino it will no work 
+NOTE: Order of Pcf8574 board address wise must be in sequence otherwise it will not work in expected manner 
 
 ``` 
 
