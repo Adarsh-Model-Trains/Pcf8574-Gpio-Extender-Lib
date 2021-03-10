@@ -6,16 +6,14 @@
 #include "Pcf8574Board.h"
 #include <Arduino.h>
 
-
-void Pcf8574Board::setTotalPcf8574Boards(int totalPcf8574Boards) {
-  this->_totalPcf8574Boards = totalPcf8574Boards;
-}
-
-void Pcf8574Board::initPcf8574Boards() {
-  _pcf8574Boards = new Pcf8574[_totalPcf8574Boards];
-  for (int i = 0; i < _totalPcf8574Boards; i++) {
-    _pcf8574Boards[i].setBoardAddress(_boardAddress[i]);
-    _pcf8574Boards[i].initPcf8574();
+void Pcf8574Board::initPcf8574Boards(int totalPcf8574Boards) {
+  if (totalPcf8574Boards > 0 && totalPcf8574Boards < 9) {
+    this->_totalPcf8574Boards = totalPcf8574Boards;
+    _pcf8574Boards = new Pcf8574[_totalPcf8574Boards];
+    for (int i = 0; i < _totalPcf8574Boards; i++) {
+      _pcf8574Boards[i].setBoardAddress(_boardAddress[i]);
+      _pcf8574Boards[i].initPcf8574();
+    }
   }
 }
 

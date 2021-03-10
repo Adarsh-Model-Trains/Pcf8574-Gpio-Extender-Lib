@@ -32,8 +32,7 @@ class Pcf8574Board {
       Wire.begin();
     }
 
-    void setTotalPcf8574Boards(int totalPcf8574Boards);
-    void initPcf8574Boards();
+    void initPcf8574Boards(int totalPcf8574Boards);
     bool switchOn(int pinNo);
     bool switchOff(int pinNo);
     void restBoard(int boardNo);
@@ -48,5 +47,4 @@ class Pcf8574Board {
     }
 };
 
-extern Pcf8574Board;
 #endif

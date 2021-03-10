@@ -4,14 +4,14 @@
 
 #define NO_OF_BOARDS 8
 
-Pcf8574Board pcf8574Board(NO_OF_BOARDS);
 int MAX_PINS = 0;
+
+Pcf8574Board pcf8574Board;
 
 void setup() {
   Serial.begin(9600);
   
-  pcf8574Board.initPcf8574Boards();
-  
+  pcf8574Board.initPcf8574Boards(NO_OF_BOARDS);  
   MAX_PINS = NO_OF_BOARDS * 8;
 }
 

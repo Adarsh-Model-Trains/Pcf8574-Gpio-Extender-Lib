@@ -61,25 +61,12 @@ Pcf8574Board pcf8574Board;
 #define NO_OF_BOARDS 8
 ```
 
-### initialize the object with in setup method 
-```
-void setup() {
-  
-   .....
-
-    pcf8574Board.setTotalPcf8574Boards(NO_OF_BOARDS);
-  
-  .......
-
-}
-
-```
 
 ### initialize the Pcf8574Boards object for using its methods 
-
+* initPcf8574Boards(NO_OF_BOARDS) will take no of Pcf8574 boards we want to configure in chain max 8 boards 
 ```
     .......
-      pcf8574Board.initPcf8574Boards();
+      pcf8574Board.initPcf8574Boards(NO_OF_BOARDS);
      ........
 ```
 
@@ -96,6 +83,7 @@ void setup() {
 ```
 
 ### use lib method for pin on 
+* switchOn(pinNo) will take the pin number 1 to ( no of boards X 8 ) in chain sequence 
 ```
 void loop() {
   
@@ -109,7 +97,7 @@ void loop() {
 ```
 
 ### use lib method for pin off
-
+* switchOn(pinNo) will take the pin number 1 to ( no of boards X 8 ) in chain sequence 
 ```
 void loop() {
   
@@ -134,8 +122,7 @@ int MAX_PINS = 0;
 
 void setup() {
   Serial.begin(9600);
-  pcf8574Board.setTotalPcf8574Boards(NO_OF_BOARDS);
-  pcf8574Board.initPcf8574Boards();
+  pcf8574Board.initPcf8574Boards(NO_OF_BOARDS);
   MAX_PINS = NO_OF_BOARDS * 8;
 }
 
