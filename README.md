@@ -10,7 +10,7 @@ Pcf8574-lib is for supporing multiple Pcf8574 boards together
 in chain with less complexcity of the programming 
 
 mex we can connect 8 Pcf8574 together in chain which will give extra 64 pins for operations 
-this api support a simple interface where we can controll 0-63 pins by its sequence number 
+this api support a simple interface where we can controll 1-64 pins by its sequence number 
 respected to their sequence in the chain 
 
 pin number will start from 1 to (number of board X 8 pin per board)
