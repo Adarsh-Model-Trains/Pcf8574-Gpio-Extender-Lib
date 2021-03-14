@@ -1,4 +1,4 @@
-# Pcf8574 lib
+# Pcf8574-Gpio-Extender-Lib
 
 ---
 
@@ -6,7 +6,7 @@
 
 ## About the Lib
 ```
-Pcf8574-lib is for supporing multiple Pcf8574 boards together 
+Pcf8574-Gpio-Extender-Lib is for supporing multiple Pcf8574 boards together 
 in chain with less complexcity of the programming 
 
 mex we can connect 8 Pcf8574 together in chain which will give extra 64 pins for operations 
