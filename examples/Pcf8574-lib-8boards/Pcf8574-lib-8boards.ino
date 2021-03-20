@@ -3,7 +3,7 @@
 
 Pcf8574Board pcf8574Board;
 
-#define NO_OF_BOARDS 8
+#define NO_OF_BOARDS 4
 int MAX_PINS = 0;
 
 void setup() {

@@ -23,7 +23,7 @@ NOTE: Order of Pcf8574 board address wise must be in sequence otherwise it will 
 ``` 
 
 # YOUTUBE LINK
-[![PCF8574-GPIO-PIN-EXTENDER](http://img.youtube.com/vi/AV3vKVSLTbs/0.jpg)](https://www.youtube.com/watch?v=AV3vKVSLTbs "PCF8574")
+[![PCF8574-GPIO-PIN-EXTENDER](http://img.youtube.com/vi/HQZA2aJluAk/0.jpg)](https://www.youtube.com/watch?v=HQZA2aJluAk "PCF8574")
 
 ## connections details 
 
