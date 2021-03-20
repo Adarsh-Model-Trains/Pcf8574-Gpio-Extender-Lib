@@ -100,13 +100,13 @@ void loop() {
 ```
 
 ### use lib method for pin off
-* switchOn(pinNo) will take the pin number 1 to ( no of boards X 8 ) in chain sequence 
+* switchOff(pinNo) will take the pin number 1 to ( no of boards X 8 ) in chain sequence 
 ```
 void loop() {
   
   .......
 
-  pcf8574Board.switchOn(pinNo); // pinNo is the sequence value of the pin in Pcf8574 chain starting from 0 to (8 x number of board) in chain 
+  pcf8574Board.switchOff(pinNo); // pinNo is the sequence value of the pin in Pcf8574 chain starting from 0 to (8 x number of board) in chain 
   
   ..........
 }
