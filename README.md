@@ -22,7 +22,7 @@ NOTE: Order of Pcf8574 board address wise must be in sequence otherwise it will 
 
 ``` 
 
-# YOUTUBE LINK
+# PCF8574 BOARD CONFIGURAITON YOUTUBE LINK 
 [![PCF8574-GPIO-PIN-EXTENDER](http://img.youtube.com/vi/HQZA2aJluAk/0.jpg)](https://www.youtube.com/watch?v=HQZA2aJluAk "PCF8574")
 
 ## connections details 
@@ -46,6 +46,10 @@ and we can set 8 boareds with 0x21 to 0x27 addressing with 8pin in each board
 ```
 
 ## steps for using lib
+
+# PCF8574 LIBRARY YOUTUBE LINK 
+[![PCF8574-GPIO-PIN-EXTENDER](http://img.youtube.com/vi/VecIVlmVPHU/0.jpg)](https://www.youtube.com/watch?v=VecIVlmVPHU "PCF8574")
+
 
 ### include the header file 
 ```
